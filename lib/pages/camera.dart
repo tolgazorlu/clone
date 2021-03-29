@@ -84,8 +84,7 @@ class _CameraState extends State<Camera> {
     var directory = await getTemporaryDirectory();
     _filePath = directory.path + '/${DateTime.now()}.mp4';
     //_controller.startVideoRecording(_filePath);
-    _controller.startVideoRecording(
-        _filePath); // BU SATIRDA VIDEO PATH ALMASI LAZIM FAKAT ALMIYOR!
+    _controller.startVideoRecording(_filePath);
     setState(() => _isRecording = true);
   }
 
@@ -108,7 +107,10 @@ class _CameraState extends State<Camera> {
     return Scaffold(
         body: Column(
       children: [
-        Container(height: 500, child: Center(child: _buildCamera())),
+        Container(
+            height: 700,
+            width: MediaQuery.of(context).size.height,
+            child: Center(child: _buildCamera())),
         _buildControls(),
       ],
     ));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok/pages/cameraPage.dart';
 import 'package:tiktok/pages/home.dart';
 import 'package:tiktok/theme/color.dart';
 import 'package:tiktok/widgets/tiktok.dart';
@@ -74,7 +75,10 @@ class _RootState extends State<Root> {
                   )
                 : InkWell(
                     onTap: () {
+                      //print("Tıklandı!");
                       selectedIndex(index);
+                      /*Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => CameraPage()));*/
                     },
                     child: UploadIcon(),
                   );
