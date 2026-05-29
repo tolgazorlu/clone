@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok/pages/root.dart';
-import 'package:tiktok/pages/camera.dart';
+import 'pages/root.dart';
+import 'theme/colors.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(const SparkApp());
 
-class MyApp extends StatelessWidget {
+class SparkApp extends StatelessWidget {
+  const SparkApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Spark',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: AppColors.background,
+        primaryColor: AppColors.flameEnd,
+        fontFamily: 'Roboto',
+        appBarTheme: const AppBarTheme(
+          color: AppColors.surface,
+          elevation: 0,
+        ),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: AppColors.flameEnd,
+          secondary: AppColors.accentEnd,
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Root(),
+      home: const Root(),
     );
   }
 }
